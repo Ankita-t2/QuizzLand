@@ -4,16 +4,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import com.exam.model.exam.Score;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -36,12 +29,37 @@ public class User implements UserDetails {
 		return phone;
 	}
 
+
+	@OneToMany
+	@JsonIgnore
+	private Set<Score> scores=new HashSet<>();
+
+	public Set<Score> getScores() {
+		return scores;
+	}
+
+	public void setScores(Set<Score> scores) {
+		this.scores = scores;
+	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	private boolean enabled=true;
-	private String profile;
-	
+
+	@OneToMany()
+   private  Set<Score> score=new HashSet<>();
+
+	public Set<Score> getScore() {
+		return score;
+	}
+
+	public void setScore(Set<Score> score) {
+		this.score = score;
+	}
+
+	@Lob
+	private byte[] profile;
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "user")
 	@JsonIgnore
 	private Set<UserRole> userRoles=new HashSet<>();
@@ -55,11 +73,11 @@ public class User implements UserDetails {
 		this.userRoles = userRoles;
 	}
 
-	public String getProfile() {
+	public byte[] getProfile() {
 		return profile;
 	}
 
-	public void setProfile(String profile) {
+	public void setProfile( byte[] profile) {
 		this.profile = profile;
 	}
 
@@ -71,7 +89,7 @@ public class User implements UserDetails {
 	
 
 	public User(Long id, String userName, String password, String firstName, String lastName, String email,
-			String phone, boolean enabled, String profile, Set<UserRole> userRoles) {
+			String phone, boolean enabled, byte[]  profile, Set<UserRole> userRoles) {
 		super();
 		this.id = id;
 		this.userName = userName;
