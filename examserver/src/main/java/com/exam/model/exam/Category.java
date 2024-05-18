@@ -19,6 +19,18 @@ public class Category {
     @JsonIgnore
     private Set<Quiz> quizzes=new LinkedHashSet<>();
 
+    @OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
+    @JsonIgnore
+    private  Set<Tutorial> tutorials=new LinkedHashSet<>();
+
+    public Set<Tutorial> getTutorials() {
+        return tutorials;
+    }
+
+    public void setTutorials(Set<Tutorial> tutorials) {
+        this.tutorials = tutorials;
+    }
+
     public Category() {
 
     }
