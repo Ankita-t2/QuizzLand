@@ -16,7 +16,11 @@ public interface UserService {
 	public void deleteUser(Long userId);
 
 	public User updateUser(User user);
+<<<<<<< Updated upstream
 
+=======
+	
+>>>>>>> Stashed changes
 	
 	
 }

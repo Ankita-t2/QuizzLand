@@ -3,7 +3,10 @@
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/bin" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/examserver">
+      <sourceFolder url="file://$MODULE_DIR$/examserver/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examserver/src/test/java" isTestSource="false" />
+    </content>
     <orderEntry type="jdk" jdkName="15" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

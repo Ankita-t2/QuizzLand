@@ -47,7 +47,10 @@ public class User implements UserDetails {
 	}
 	private boolean enabled=true;
 
+<<<<<<< Updated upstream
 	@OneToMany()
+=======
+>>>>>>> Stashed changes
    private  Set<Score> score=new HashSet<>();
 
 	public Set<Score> getScore() {

@@ -3,6 +3,12 @@ package com.exam.controller;
 
 
 import java.io.IOException;
+<<<<<<< Updated upstream
+=======
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+>>>>>>> Stashed changes
 import java.util.HashSet;
 import java.util.Set;
 
@@ -71,7 +77,10 @@ public class Usercontroller {
 			// Set the image data into the User entity
 			user.setProfile(file.getBytes());
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 			// Update the user with the new image data
 		userService.updateUser(user);
 
@@ -136,7 +145,10 @@ public class Usercontroller {
 
 		ByteArrayResource resource = new ByteArrayResource(imageData);
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 		return ResponseEntity.ok()
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + username + ".jpg\"")
 				.contentType(MediaType.IMAGE_JPEG)
@@ -163,6 +175,10 @@ public class Usercontroller {
 		}
 	}
 
+<<<<<<< Updated upstream
 
+=======
+	
+>>>>>>> Stashed changes
 
 }

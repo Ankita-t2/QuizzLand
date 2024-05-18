@@ -63,7 +63,11 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter{
 				.cors()
 				.disable()
 				.authorizeRequests()
+<<<<<<< Updated upstream
 				.antMatchers("/generate-token","/user/","/user/upload-image/**","/score/**","/tutorial/**").permitAll()
+=======
+				.antMatchers("/generate-token","/user/","/user/upload-image/**").permitAll()
+>>>>>>> Stashed changes
 				.antMatchers(HttpMethod.OPTIONS).permitAll()
 				.anyRequest().authenticated()
 				.and()

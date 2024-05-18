@@ -28,7 +28,11 @@ public class UserServiceImpl implements UserService {
 
 
 
+<<<<<<< Updated upstream
 
+=======
+	
+>>>>>>> Stashed changes
 	//creating user
 	@Override
 	public User createUser(User user,Set<UserRole>userRoles) throws UserFoundException {
